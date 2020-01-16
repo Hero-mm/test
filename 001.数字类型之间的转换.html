@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数字类型之间的转换</title>
+</head>
+<body>
+    <h1 style="color: pink;">数字类型的转换</h1>
+</body>
+<script>
+            // NaN 不是一个数
+        // 1.document.write('hello world');
+        // 2.两个 == 号是进行判断的，控制台输出 false
+        //document.write(1==2);
+        // 不能和NaN进行判断是否相等，包括和自己都不相等 
+        document.write(isNaN(parseInt('123px'))+('</br>'));
+        document.write('AA'  == NaN+('</br>'));
+
+        // 参数描述占位符 isNaN([val])
+        // NaN 检测一个值是否为非有效数字，如果不是有效数字返回true，如果不是Number类型，先转换为Number类型，反之为有效数字FLASE
+       document.write(isNaN(10));//=>FLASE
+       document.write(isNaN('aa'));//=>TRUE
+       document.write(isNaN('10'));//==false  //如果不是Number类型，先转换为Number类型
+        Number('10') //=> 10;
+        // 把字符串转换为数字，只要字符串包含任意一个有效数字字符（第一个点除外）结果都是NaN，空字符串会变成数字0
+       document.write(Number('12.5'));//=>12.5
+       document.write(Number('12.5px'));//=>NaN
+       document.write(Number('12.5.5'));//>=NaN
+       document.write(Number(''));//>=0   空字符串会变成数字0
+       document.write(Number({name:'10'}));//=>NaN
+       document.write(Number({}));//=>NaN
+
+       document.write(Number([]));//=>0   空字符串会变成数字0
+        // [].toString() ->  ''    看toString 的结果，结果在Number
+       document.write(Number([12]));//=>12
+        // [].toString() -> '12'
+       document.write(Number([12,1]));//=>NaN
+        //  [].toString() ->'12,1'
+
+        //  布尔类型转换为数字
+       document.write(Number(true));//=>1
+       document.write(Number(false));//=>0
+        // 因为不管是1或者0都是有效数字，转换为flase
+       document.write(isNaN(false));//=>false
+       document.write(Number(null));//=>0
+       document.write(Number(undefined));//=>NaN
+        // 把引用数字类型转化为数字，是先基于toString方法转换为字符串，然后再转换为数字
+       document.write(Number([12]));//=>12
+        //[12].toString() ->'12'
+        let str='12.5px';
+        let str1 = 'aba';
+       document.write(Number(str));//=>NaN
+       document.write(parseInt(str));//=>12
+       document.write(parseInt(str1));//=>NaN
+       document.write(parseFloat(str));//>=12.5
+       document.write(parseFloat(true));//=>NaN
+       document.write(Number(true));//=>1
+        </script>
+</html>
