@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var btn = document.getElementById('btn');
+            /*
+            addEventListener()
+            事件的字符串，不要  on
+            回调函数，当时就按触发时该函数会被调用
+            是否在捕获阶段触发事件，需要一个布尔值，一般写false
+            可以同时为一个元素绑定多隔响应函数，当事件触发时，响应函数
+            会按照函数的绑定顺序执行。
+            */
+            btn.addEventListener('click',function(){
+                alert('我是通过addEventListener事件触发的');
+            },false);
+            btn.addEventListener('click',function(){
+                alert('我也是通过addEventListener事件触发的');
+            },false);
+            /*
+            attachEvent()
+            事件的字符串,要加  on
+            回调函数
+            这个与addEventListener 的执行顺序正好相反
+            btn.attachEvent('onclick',function(){
+                alert('1我是通过attachEvent 函数触发的');
+            });
+             btn.attachEvent('onclick',function(){
+                alert('2我是通过attachEvent 函数触发的');
+            });
+            */
+        };
+    </script>
+</head>
+<body>
+    <button id="btn">点我</button>
+</body>
+</html>

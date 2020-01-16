@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>浏览器常用的输出方式</title>
+</head>
+<body>
+    <script>
+        let a = 10;
+        let b = [{
+            id:11,
+            name:'张三'
+        },
+    {
+        id:2,
+        name:'李四'
+    }]
+       // console.log/dir/table(a);控制台输出
+        // dir 输出一个对象的详细键值对信息
+       console.dir(document.body);
+       console.table(b);
+    //    浏览器弹出框,三种方式都会先经过toString转换为字符串
+    console.log([1,2,3]);
+    alert([1,2,3]);
+    alert({name:'张三',sex:'男'});
+    // 确定和取消
+    confirm('确定吗');
+    // 在confirm 的基础上多了一个输入框
+    prompt('确定要干啥，写出原因');
+    // document.write 在页面中写信息
+    document.write('woshi');
+        </script>
+</body>
+</html>

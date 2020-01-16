@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            /* Css3新盒子模型属性：控制width/height 是盒子最终的宽高 */
+            box-sizing: border-box;
+            /* auto 盒子居中 */
+            margin: 20px auto;
+            width: 200px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border: 1px solid lightcoral;
+            /* z-index: 1; */
+            /* 只有父元素加了relative，才能使子元素相对于父元素进行定位 */
+            position: relative;
+            /* 鼠标是一个小手手势   move 是移动的秃瓢*/
+            cursor: pointer;
+        }
+        .box .detail{
+            /* 默认样式，隐藏 */
+            display: none;
+            position: absolute;
+            right: -1px;
+            top: 38px;
+            box-sizing: border-box;
+            /* 一致可以盒子里面的内容居中 */
+            height: 100px;
+            line-height: 100px;
+            width: 500px;
+            text-align: center;
+            border: 1px solid lightcoral;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box">
+        <span>购物车</span>
+        <div class="detail" id="detail" style="display: none;">
+            购物车的相关信息
+        </div>
+    </div>
+    <!--传统基于操作DOM方式实现业务需求
+    1.像操作哪个就先获取它
+    2.给元素绑定某一个事件
+    3.在事件触发的时候修改元素的样式等等
+    -->
+ <script>
+    //  通过id获取某个元素,在整个文档中通果元素ID获取到这个元素对象
+    // 先把这个值存起来,再获取这个元素
+     let box = document.getElementById('box');
+     let detail = document.getElementById('detail');
+    //  元素对象.onXXX=function(){},事件绑定，XXX事件类型（click/mouseover/mousedown/keydown）
+     box.onclick = function () {
+      /* 修改元素样式的某个值(操作的是元素行内样式，
+         如果没有写在行内样式，获取不到， .style.xxx 获取不到)
+         元素对象.style.XXX = xxx;
+         首先获取detail原有的样式 (显示还是隐藏)
+         */
+        // 前期需要在行内设置在一个样式,获取行内的样式
+        let n = detail.style.display;
+        if(n==='none'){
+            // 当前是隐藏的，我们让其显示
+             detail.style.display = 'block';
+             box.style.borderBottomColor = '#FFF';
+        }else{
+             detail.style.display = 'none';
+             box.style.borderBottomColor = 'lightcoral';
+        }
+     }
+ </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+   /* css样式代码区域 */
+   *{
+    padding: 0;
+    margin: 0;
+}
+/* 父 */
+#banner{
+    /* 声明元素宽度样式 */
+    width: 100%;
+    height: 340px;
+    background: #967a7a;
+    /*可以去除滚动条 */
+    overflow: hidden;
+    /* 给子集定位 */
+    position: relative;
+}
+/* 子 */
+.imgWrap{
+    width: 500%;
+    height: 340px;
+    left: 0;
+    position: absolute;
+}
+.item{
+    /* 百分比的值是相对于父级的值 */
+    width: 20%;
+    height: 340px;
+    float: left;
+}
+.btn-list{
+    width: 150px;
+    height: 10px;
+    left: 50%;
+    bottom: 15px;
+    background-color: red;
+    /* 将定位元素居中 */
+     margin-left: -75px;
+    position: absolute;
+}
+.btn{
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    float: left;
+    border-radius: 100%;
+    /* 上下为0 左右为10，复合写法 */
+    margin: 0 10px;
+    /* 鼠标悬浮变成小手 */
+    cursor: pointer;
+}
+.btn:hover{
+    background-color:blue;
+}
+.active {
+    background-color: blue;
+}

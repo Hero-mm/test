@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var oTxt = document.getElementById('Txt');
+            var oBtn = document.getElementById('Btn');
+            var oUI = document.getElementById('example');
+            var aLI = document.getElementsByTagName('li');
+            oBtn.onclick = function(){
+                // oTxt.value = '我是你爸爸';
+                // oTxt['value'] = '我是你爸爸';
+                oTxt.setAttribute('value','我是你爸爸');
+                var oLI = document.createElement('li');
+                oLI.innerHTML = oTxt.value;
+                // 父级.appendChild(子节点)
+                // oUI.appendChild(oLI);
+                if(aLI.length>0){
+                     oUI.insertBefore(oLI,aLI[0]);
+                }else{
+                    oUI.appendChild(oLI);
+                }
+               
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="Txt" />
+    <input type="button" id="Btn" value="点击" />
+    <ul id="example"> 
+        <li></li>
+    </ul>
+</body>
+</html>

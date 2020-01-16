@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>隔行变色</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0 ;
+        }
+        ul{
+            list-style: none;
+        }
+        #newBox{
+            box-sizing: border-box;
+            margin: 20px auto;
+            padding:20px ;
+            width: 300px;
+            border: 1px solid red;
+             /* 鼠标是一个小手手势   move 是移动的秃瓢*/
+             cursor: pointer;
+        }
+        #newBox li{
+            line-height: 35px;
+            border-bottom: 1px dashed blue;
+        }
+        /* 去除li标签中的最后一个 */
+        #newBox li:nth-last-child(1){
+            border-bottom: none;
+        }
+        /* 基于css实现 even 偶数行
+        #newBox li:nth-child(even){
+            background: blue;
+        }
+        #newBox li:hover{
+            background: burlywood;
+        }
+*/
+    </style>
+</head>
+<body>
+    <!-- ul#newBox>li*5{我是第$个li} -->
+    <ul id="newBox">
+        <li>我是第1个li</li>
+        <li>我是第2个li</li>
+        <li>我是第3个li</li>
+        <li>我是第4个li</li>
+        <li>我是第5个li</li>
+    </ul>
+    <script>
+        let newBox = document.getElementById('newBox');
+        // ByTagName 获取都叫这个名字的标签，通过标签名获取一组元素
+        let newList = document.getElementsByTagName('li');
+        /*
+            自定义属性编程意思
+            前期把一些值存储到元素的自定义属性上，后期需要用到的时候，之际
+            从属性上获取到这些值即可
+            元素集合(HTMLCollection) = > 集合和数组相似，也是以数字索引作为属性名，有length属性进行存储长度，属于“类数组”
+        */
+        console.log(newList);
+        // 获取某个元素   newList[0]
+        // 循环所有获取的id，判断每一个li的奇偶性
+        for(let i =0 ;i<newList.length;i++){
+                // newList[i];
+            // 偶数判断的标准：能被2整除（除以2的余数是0）n % 2 取余
+         let bg = i % 2 ===0 ? 'white': 'pink';
+             newList[i].style.backgroundColor = bg;
+            //  设置自定义属性myOriginBg[]来存储
+             newList[i].myOriginBg = bg;
+            // 循环时给每一个li都绑定mouseover/mouseout 事件
+              newList[i].onmouseover = function(){
+            // this  代表操作的这个li
+            this.style.backgroundColor = 'lightblue';
+        }
+        newList[i].onmouseout = function(){
+            // 如何在离开的时候知道原来的颜色
+            // if(curli.onmouseover===none){
+            //     return this.style.background;
+            // }else{
+                 this.style.backgroundColor = this.myOriginBg;
+            // }
+           
+        }
+        }
+     
+    </script>
+</body>
+</html>

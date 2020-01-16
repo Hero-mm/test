@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--  如果是点击效果，不能使用JS，基于 :target 实现手风琴效果-->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            /* Css3新盒子模型属性：控制width/height 是盒子最终的宽高 */
+            box-sizing: border-box;
+            /* auto 盒子居中 */
+            margin: 20px auto;
+            width: 200px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border: 1px solid lightcoral;
+            /* z-index: 1; */
+            /* 只有父元素加了relative，才能使子元素相对于父元素进行定位 */
+            position: relative;
+        }
+        .box .detail{
+            /* 默认样式，隐藏 */
+            display: none;
+            position: absolute;
+            right: -1px;
+            top: 38px;
+            box-sizing: border-box;
+            /* 一致可以盒子里面的内容居中 */
+            height: 100px;
+            line-height: 100px;
+            width: 500px;
+            text-align: center;
+            /* z-index 如果不写默认都是0 */
+            z-index:-1;
+            border: 1px solid lightcoral;
+
+        }
+        /* 鼠标滑过 box 样式 */
+        .box:hover{
+            border-bottom-color: #FFF;
+           
+        }
+        /* 鼠标滑过 ,显示详情页面*/
+        .box:hover .detail{
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <span>购物车</span>
+        <div class="detail">
+            购物车的相关信息
+        </div>
+    </div>
+</body>
+    <script></script>
+</html>

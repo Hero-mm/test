@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>点击改变颜色</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            height: 100%;
+            width: 100%;
+            /* 溢出隐藏 */
+            overflow: hidden;
+        }
+        button{
+            padding: 30px;
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <button id="changeBtn" >点我</button>
+    <script>
+        let body = document.body;
+        let changeBtn = document.getElementById('changeBtn');
+        // 从数组中拿到某一个颜色是值只需要: ary[数字索引]
+        let i = 0;
+        // 以数组形式写
+        // 每一次点击基于累加的I作为索引，从数组中拿到不同颜色的值
+        let ary = ['white','pink','red','lightgreen','rgb(202, 89, 89)','orange','#999'];
+        // 点击按钮实现功能
+        changeBtn.onclick = function(){
+            i++;
+            console.log(ary[i]);
+            // 如果索引累加后比最大的索引值都要大，我们让索引从0开始
+            i>ary.length - 1? i= 0: null;
+            // if(i>ary.length - 1){
+            //     i=0;
+            // }else{
+
+            // }
+            body.style.backgroundColor= ary[i];
+        }
+    </script>
+</body>
+</html>
