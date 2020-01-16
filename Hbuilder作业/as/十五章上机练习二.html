@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+
+	<body onmousemove="a_a()">
+		<div class="" id="aa" draggable="true"></div>
+	</body>
+	<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$("#aa").css("width", "200px");
+		$("#aa").css("height", "200px");
+		$("#aa").css("border", "1px dashed #444444");
+		$("#aa").css("position","absolute");
+		
+		
+		var aa=document.getElementById("aa");
+		aa.onmousedown=function(e){
+			var e=e||window.event;
+			this.style.background="red";
+			document.onmousemove=function(e){
+				aa.style.left=e.clientX+"px";
+				aa.style.top=e.clientY+"px";
+			}
+		}
+		aa.onmouseup=function(e){
+			var e=e||window.event;
+			this.style.background="gray";
+			document.onmousemove="null";
+		}
+	</script>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>aaa</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	</head>
+	<style type="text/css">
+		#demo,#demoo,#demooo,#demofo,#demofi{
+			width: 120px;
+			height: 120px;
+			background: #31B0D5;
+			margin-left: 40%;
+			margin-top: 70px;
+		}
+		#btn{
+			margin-left: 40%;
+			margin-top: 30px;
+		}
+	</style>
+
+	<body>
+		<div class="row">
+			<div class="col-lg-2">
+				<div id="demo"></div>
+				<div id="btn">
+					<button class="btn btn-primary" id="hide">隐藏</button>
+					<button class="btn btn-danger" id="show">显示</button>
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div id="demoo"></div>
+				<div id="btn">
+					<button class="btn btn-primary" id="fadein">淡入</button>
+					<button class="btn btn-danger" id="fadeout">淡出</button>
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div id="demooo"></div>
+				<div id="btn">
+					<button class="btn btn-primary" id="fadeto">淡化浓化</button>
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div id="demofo"></div>
+				<div id="btn">
+					<button class="btn btn-primary" id="slideup">划上</button>
+					<button class="btn btn-primary" id="slidedo">划下</button>
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div id="demofi"></div>
+				<div id="btn">
+					<button class="btn btn-primary" id="free">自定义</button>
+				</div>
+			</div>
+			<div class="col-lg-2">
+
+			</div>
+		</div>
+
+	</body>
+	<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+	<script src="jQuery.color.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			$("#hide").click(function() {
+				$("#demo").hide(500); /*隐藏*/
+				$("#demo").toggle(500); /*显示和隐藏的切换*/
+			});
+			$("#show").click(function() {
+				$("#demo").show(500); /*显示*/
+				$("#demo").toggle(500); /*显示和隐藏的切换*/
+			});
+			$("#fadein").click(function(){
+				$("#demoo").fadeOut(500);/*消失*/
+				$("#demoo").fadeToggle(500);/*消失和出现的切换*/
+			});
+			$("#fadeout").click(function(){
+				$("#demoo").fadeIn(500);/*出现*/
+				$("#demoo").fadeToggle(500);/*消失和出现的切换*/
+			});
+			$("#fadeto").click(function(){
+				$("#demooo").fadeTo(500,0.5,function(){/*先转换透明度,再执行代码*/
+					$(this).css("opacity","1");
+					/*不过后来的black透明度也是括号里的0.5*/
+//					$(this).css("opacity","1")先把透明度转换为1,再换颜色
+					$(this).css("background","red");
+					$(this).css("background","#D58512");
+					$(this).css("background","yellow");
+					$(this).css("background","green");
+					$(this).css("background","teal");
+					$(this).css("background","blue");
+					$(this).css("background","white");/*写这么多  其实都是一瞬间的*/
+					$(this).css("background","black");
+				});
+			});
+			$("#slideup").click(function(){
+				$("#demofo").slideUp(500);/*划上*/
+				$("#demofo").slideToggle(500);
+			});
+			$("#slidedo").click(function(){/*划下*/
+				$("#demofo").slideDown(500);
+				$("#demofo").slideToggle(500); 
+			});
+			$("#free").click(function(){/*需要color插件*/
+				
+			});
+		})
+	</script>
+
+</html>

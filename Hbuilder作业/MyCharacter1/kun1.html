@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>DOM事件</title>
+		<style type="text/css">
+			#demo{
+				width: 200px;
+				height: 50px;
+				line-height: 50px;
+				background-color: red;
+				font-size: 20px;
+				text-align: center;
+			}
+			</style>
+	</head>
+	<body>
+		<div id ="demo">单击我查看效果</div>
+		<script type="text/javascript">
+			var demo=document.getElementById("demo");
+			demo.onclick=function(){
+				this.style.color="red";
+				this.style.backgroundColor="black";
+			}
+		</script>
+	</body>
+</html>

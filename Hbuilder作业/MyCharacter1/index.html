@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<p><input name="chk"type="checkbox"value="滑雪"/>滑雪</p>
+		<p><input name="chk"type="checkbox"value="游泳"/>游泳</p>
+		<p><input name="chk"type="checkbox"value="爬山"/>爬山</p>
+		<p><input name="btn"type="button"onclick="allChecked()" value="选择"></p>
+	</body>
+	<script type="text/javascript"src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("body p").css("border","2px dashed #000");
+			alert($(":checked").val());
+		})
+	</script>
+</html>

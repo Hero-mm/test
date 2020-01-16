@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>彗星尾巴</title>
+</head>
+<style>
+    html,
+    body {
+        margin: 0px;
+        padding: 0px;
+        height: 100%;
+        width: 100%;
+        background-color: black;
+        font-size: 0px;
+        line-height: 0px;
+    }
+</style>
+
+<body>
+    <canvas id="canvas"></canvas>
+</body>
+<script>
+    (function () {
+        var canvas = document.getElementById("canvas");
+        canvas.height = document.body.offsetHeight;
+        canvas.width = document.body.offsetWidth;
+    }())
+    let x = 200;
+    let y = 100;
+    let pathList = [];
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    window.onmousemove = function (e) {
+        x = e.clientX;
+        y = e.clientY;
+    }
+    window.ontouchmove = function (e) {
+        x = e.touches[0].clientX;
+        y = e.touches[0].clientY;
+        console.log(e)
+    }
+    setInterval(() => {
+        let num = Math.random() * 2;
+        if(pathList.length>100){
+            pathList.shift();
+        }
+        pathList.push(createPath(num));
+        paint(pathList);
+    }, 1000/90);
+    function paint(list) {
+        ctx.clearRect(0, 0, 10000, 10000);
+        for (let i = 0; i < list.length; i++) {
+            let p = list[i].shift();
+            if (p) {
+                let color=Math.floor(Math.random()*16000000);
+                color=color.toString(16)
+                ctx.strokeStyle = "#"+color;
+                ctx.beginPath();
+                ctx.moveTo(p.x, p.y);
+                ctx.lineTo(p.x, p.y +5);
+                ctx.lineTo(p.x, p.y -5);
+                ctx.moveTo(p.x, p.y);
+                ctx.lineTo(p.x+5, p.y);
+                ctx.lineTo(p.x-5, p.y);
+                ctx.stroke();
+            }
+
+        }
+    }
+    function createPath(num) {
+        let flag = Math.random() > 0.5 ? 1 : -1;
+        let arr = [];
+        let a = num;
+        let b = -2 * x * a;
+        let c = (4 * y * a + b * b) / (4 * a);
+        for (let i = 0; i < 1000; i+=0.2) {
+            arr.push({ x: (x + i * flag), y: Math.floor((a * (x + i * flag) * (x + i * flag) + b * (x + i * flag) + c)) });
+        }
+        return arr;
+    }
+</script>
+
+</html>

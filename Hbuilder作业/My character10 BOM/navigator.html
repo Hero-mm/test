@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			document.write("<abbr>浏览器："+navigator.appName+"</abbr><br>");
+			document.write("<abbr>浏览器版本："+navigator.appVersion+"</abbr><br>");
+			document.write("<abbr>浏览器的用户代理报头："+navigator.userAgent+"</abbr><br>");
+			document.write("<abbr>平台："+navigator.platform+"</abbr><br>"); 
+			//用来表示每隔多长时间就执行一次代码
+//		var timer=setInterval(funtion clock()){
+//				var now =new Date();
+//				document.getElementById("timer");
+//		},1000)
+//		function stop(){
+//			清除   clearInterval(timer);
+//		}
+	function back(){//等同后退一个页面
+				location.replace("kun2.html");
+			}
+	//定时设定时间SetTimeOut(表达式，时间);
+			var c=setTimeout(function(){
+				back();
+			},2000);//每2秒后循环一次
+			function stop(){
+				clearTimeout(c);
+			}
+		</script>
+	</body>
+</html>

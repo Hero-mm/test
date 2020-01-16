@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main">
+        <div id="banner">
+            <a href="#"><div id="ban_1"></div></a>
+            <a href="#"><div id="ban_2"></div></a>
+            <a href="#"><div id="ban_3"></div></a>
+        </div>
+        <a href="#" class="btn" id="prev"></a>
+        <a href="#" class="btn" id="next"></a>
+        <div class="cycle" id="cycle">
+            <span class="active"></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    function ById(id) {
+        return document.getElementById(id);
+    }
+    let time=null;
+    index=0;
+    let oBn=ById("banner").getElementsByTagName("div");
+    let oSp=ById("cycle").getElementsByTagName("span");
+    let oMain=ById("main");
+    // let oPrev=ById("prev");
+    // let oNext=ById("next");
+    function autoplay(){
+        time=setInterval(function(){
+            index++;
+            if(index>=3){
+                index=0;
+            }
+            changeImg();
+        },1000)
+    }
+    function changeImg() {
+        for(let i=0;i<oBn.length;i++){
+            oBn[i].className="";
+            oBn[i].style.display="none";
+            oSp[i].className='';
+        }
+        oBn[index].style.display="block";
+        oSp[index].className="active";
+    }
+    oMain.onmouseover=function(){
+        clearInterval(time);
+    }
+    oMain.onmouseout=function(){
+        autoplay();
+        changeImg();
+    }
+    oNext.onclick=function(){
+        index++;
+        if(index>=3){
+            index=0;
+        }
+        changeImg();
+    }
+    oPrev.onclick=function(){
+        index--;
+        if (index<0){
+            index=2;
+        }
+        changeImg();
+    }
+    for(let i=0;i<3;i++){
+        oSp[i].id=i;
+        oSp[i].onclick=function () {
+            index=this.id;
+            changeImg();
+        }
+    }
+    autoplay();
+    changeImg();
+</script>

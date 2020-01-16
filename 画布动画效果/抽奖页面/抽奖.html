@@ -1,0 +1,144 @@
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>抽奖</title>
+		<style>
+			*{margin:0;padding:0;}
+#box{width:400px;height:400px;border:2px #C6C solid;margin:20px auto;background:#99F;}
+#box>div{position:absolute;width:60px;height:40px;color:#F03;font-size:20px;border:2px #F63 solid;opacity:0.4;line-height:40px;background:#F96;}
+#butt{position:absolute;background:#F6C;color:#36F;font-size:16px;margin-top:200px;margin-left:150px;}
+#span{width:300px;height:40px;margin-left:160px;display:block;border:2px #F63 solid;float:left;line-height:40px;}
+#span i{font-style:normal;}
+</style>
+	</head>
+	<body>
+		<span id="span">离抽奖结束还有:<i></i><i></i><i></i><i></i></span>
+		<div id="box" class="box">
+			<div>一等奖</div>
+			<div style="margin-left:336px">二等奖</div>
+			<div style="margin-left:336px;margin-top:356px;">三等奖</div>
+			<div style="margin-top:356px;">安慰奖</div>
+			<button id="butt" onclick="butt()">点击抽奖</button>
+		</div>
+		<script type="text/javascript">
+			var opa = document.getElementById("box").getElementsByTagName("div");
+			var ii = document.getElementById("span").getElementsByTagName("i");
+			for (var i = 0; i < opa.length; i++) {
+				opa[i].style.opacity = 0.4;
+			}
+			//var span=document.getElementById("span").style;
+			var i = 0,
+				t, tt, r,
+				count1 = 1, //限制一等奖只中一次,当一等奖抽完后顺延到二等奖
+				count2 = 3, //限制二等奖只中3次,当二等奖抽完后顺延到三等奖
+				count3 = 10, //限制等奖只中10次
+				prize = 1, //抽奖是否结束
+				time = 200,
+				curr = 0; //每次抽奖完成才能再次点击
+			var toDate = new Date(2016, 7, 29, 19, 55, 0);
+			var dt, currDate;
+
+			function obtain() { //倒计时
+				currDate = new Date();
+				dt = Math.ceil((toDate.getTime() - currDate.getTime()) / 1000); <!--转换成s-->
+				ii[0].innerHTML = parseInt(dt / (24 * 60 * 60)) + '天';
+				ii[1].innerHTML = Math.floor(dt % (24 * 60 * 60) / (60 * 60)) + '时';
+				ii[2].innerHTML = Math.floor(dt % (24 * 60 * 60) % (60 * 60) / 60) + '分';
+				ii[3].innerHTML = Math.floor(dt % 60) + '秒';
+				if (dt <= 0) {
+					prize = 0;
+					ii[0].innerHTML = 0 + '天';
+					ii[1].innerHTML = 0 + '时';
+					ii[2].innerHTML = 0 + '分';
+					ii[3].innerHTML = 0 + '秒';
+					if (prize == 0 && s == 0) {
+						alert("抽奖已结束");
+						clearInterval(tt);
+					}
+
+				}
+			}
+			tt = setInterval(obtain, 1000);
+
+			function butt() {
+				curr++;
+				if (count1 == 0 && count2 == 0 && count3 == 0) {
+					prize = 0;
+				}
+				if (curr == 1 && prize == 1) {
+					if (i != 0) {
+						opa[i].style.opacity = 0.4;
+					}
+					i = 0;
+					clearInterval(t);
+					r = parseInt(Math.random() * 10000) + 1; //产生1-10000的随机数
+					//r=1;
+					opa[i].style.opacity = 1;
+					t = setInterval(move, time);
+				} else if (curr != 1 && prize == 1) {
+					alert("请等待本次抽奖完成再抽奖");
+					alert("请点击确定继续");
+				} else if (prize == 0) {
+					alert("抽奖已结束");
+				}
+			}
+			/*function move(r){
+			switch(r){
+			case 1: 
+			} 
+			}*/
+			function move() {
+
+				opa[i].style.opacity = 0.4;
+				if (i < opa.length - 1) {
+					i++;
+				} else {
+					i = 0;
+				}
+				opa[i].style.opacity = 1;
+				time += 50;
+				console.log("r=" + r + "," + "time=" + time);
+				if (r == 1 && count1 > 0) { //中一等奖
+					clearInterval(t);
+					t = setInterval(move, time);
+					if (time == 800) {
+						clearInterval(t);
+						time = 200;
+						count1--;
+						curr = 0;
+						console.log("中一等奖的次数还有:" + count1 + "次");
+					}
+				} else if ((r % 2999 == 0 || r == 1 && count1 == 0) && count2 > 0) { //中二等奖
+					clearInterval(t);
+					t = setInterval(move, time);
+					if (time == 850) {
+						count2--;
+						clearInterval(t);
+						time = 200;
+						curr = 0;
+						console.log("中二等奖的次数还有:" + count2 + "次");
+					}
+				} else if ((r % 1000 == 0 || r % 2999 == 0 && count2 == 0 || r == 1 && count1 == 0) && count3 > 0) { //中三等奖
+					clearInterval(t);
+					t = setInterval(move, time);
+					if (time == 900) {
+						time = 200;
+						count3--;
+						clearInterval(t);
+						curr = 0;
+						console.log("中三等奖的次数还有:" + count3 + "次");
+					}
+				} else { //安慰奖
+					clearInterval(t);
+					t = setInterval(move, time);
+					if (time == 950) {
+						clearInterval(t);
+						curr = 0;
+						time = 200;
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

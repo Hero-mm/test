@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>shi</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/a.css" />
+	</head>
+	<style type="text/css">
+		* {
+			padding: 5px;
+		}
+		
+		#pho {
+			margin-left: -20px;
+		}
+		
+		#jiesuan {
+			width: 200px;
+		}
+		
+		#zongjin {
+			margin-top: -25px;
+		}
+		
+		#spin {
+			font-size: 18px;
+			font-weight: 7000;
+			font-family: "微软雅黑";
+			color: red;
+		}
+		
+		#spine {
+			font-size: 18px;
+			font-weight: 7000;
+			font-family: "微软雅黑";
+			margin-top: 15px;
+		}
+		
+		#delete {
+			font-size: 18px;
+			font-weight: 7000;
+			font-family: "微软雅黑";
+			margin-top: -6px;
+		}
+		
+		a:hover {
+			text-decoration: none;
+			color: black;
+		}
+		
+		#spink {
+			font-size: 16px;
+			font-weight: 500;
+		}
+		
+		#lii {
+			margin-top: 10px;
+		}
+		
+		#dior,
+		#lanco {
+			font-size: 20px;
+			font-weight: 700;
+			font-family: "微软雅黑";
+			margin-bottom: 15px;
+		}
+		
+		#sp {
+			margin-top: 40px;
+			margin-left: 8px;
+		}
+	</style>
+
+	<body id="body">
+		<div class="row">
+			<div class="col-lg-3">
+				<div class="navbar navbar-header">
+					<h2><b>购物车</b></h2>
+				</div>
+			</div>
+			<div class="col-lg-9">
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-lg-2" id="spink">选择</div>
+			<div class="col-lg-6 col-lg-pull-1" id="spink">商品</div>
+			<div class="col-lg-1" id="spink">单价（元）</div>
+			<div class="col-lg-2" id="spink">数量</div>
+			<div class="col-lg-1" id="spink">金额（元）</div>
+		</div>
+		<div class="row one">
+			<div class="col-lg-2">
+				<input type="checkbox" name="sp" id="sp" value="" />
+			</div>
+			<div class="col-lg-6 col-lg-pull-1">
+				<div class="col-lg-2" id="pho">
+					<img src="img/15548640700653311_920X920.jpg" width="100px" height="100px" />
+				</div>
+				<div class="col-lg-6">
+					<a id="spin">LANCOME 兰蔻 嫩肌活肤精华肌底液</a>
+					<ul class="list-unstyled" id="lii">
+						<li>50毫升</li>
+						<li>不支持7天无理由退货</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-1"><br><b id="spin">￥598元</b></div>
+			<div class="col-lg-2">
+				<div class="btn-group"><br>
+					<input type="button" class="btn btn-sm" id="jia" onclick="jia_alan()" value="+"></input>
+					<input type="text" name="" value="0" id="shang" style="width: 30px; height: 30px;" onchange="shu_ruup()" />
+					<input type="button" class="btn btn-sm" id="jian" onclick="jian_nlan()" value="-"></input>
+				</div>
+			</div>
+			<div class="col-lg-1">
+				<br>￥<b id="lanco">0.00</b>
+			</div>
+		</div>
+		<hr>
+		<div class="row one">
+			<div class="col-lg-2 ">
+				<input type="checkbox" name="sp" id="sp" value="" />
+			</div>
+			<div class="col-lg-6 col-lg-pull-1">
+				<div class="col-lg-2" id="pho">
+					<img src="img/15570312852811297_920X920.jpg" width="100px" height="100px" />
+				</div>
+				<div class="col-lg-6">
+					<a id="spin">Dior 迪奥 花漾甜心小姐 女士淡香水</a><br>
+					<ul class="list-unstyled" id="lii">
+						<li>50毫升</li>
+						<li>不支持7天无理由退货</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-1">
+				<br><b id="spin">￥498元</b>
+			</div>
+			<div class="col-lg-2">
+				<div class="btn-group"><br>
+					<input type="button" class="btn btn-sm" id="jia" onclick="jia_adio()" value="+"></input>
+					<input type="text" name="" id="xia" value="0" style="width: 30px; height: 30px;" onchange="shu_rudo()" />
+					<input type="button" class="btn btn-sm" id="jian" onclick="jian_ndio()" value="-"></button>
+				</div>
+			</div>
+			<div class="col-lg-1">
+				<br>￥<b id="dior">0.00</b>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-lg-2">
+				<input type="checkbox" name="quan" id="quan" value="" onclick="qu_an()" /> &nbsp;
+				<b id="spine" class="qxz">全选</b>
+			</div>
+			<div class="col-lg-6">
+				&nbsp;&nbsp;&nbsp;<b id="delete" onclick="shan_chu()" class="btn btn-default btn-sm"><a>删除</a></b>
+			</div>
+			<div class="col-lg-2">
+				<div class="col-lg-4" id="spink">
+					合计:
+				</div>
+				<div class="col-lg-8 col-lg-pull-1" id="zongjin">
+					<h3>￥<b id="heji">0.00</b>元</h3>
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<button type="button" class="btn btn-primary btn-sm btn-block" id="jiesuan">立即结算</button>
+			</div>
+			<div class="col-lg-1">
+			</div>
+		</div>
+		<script type="text/javascript">
+			//			这是全选功能
+			var sp = document.getElementsByName("sp");
+			var qxz = document.getElementsByClassName("qxz")[0];
+			//			上面这是全选的字,
+			var quan = document.getElementById("quan");
+			//			上面这是全选的按钮
+			
+			function qu_an() {
+				for(var i = 0; i < sp.length; i++) {
+					sp[i].checked = true;
+				}
+				qxz.innerHTML = "全不选";
+				quan.setAttribute("onclick","bu_quan()");
+			}
+			function bu_quan(){
+						for(var p=0;p<sp.length;p++){
+						sp[p].checked=false;
+						}
+						qxz.innerHTML = "全选";
+						quan.setAttribute("onclick","qu_an()");
+					}
+
+			//			实现按钮的加减决定数量功能
+			var lannum = 0;
+			var dionum = 0;
+			var lans = 598;
+			var dios = 498;
+			var lanco = document.getElementById("lanco");
+			var dior = document.getElementById("dior");
+			var heji = document.getElementById("heji");
+
+			function jia_alan() {
+				//				这是第一商品的加号事件
+				if(lannum >= 0) {
+					shang.setAttribute("value", ++lannum);
+					lanco.innerHTML = lans * lannum;
+					var all = lans * lannum + dios * dionum;
+					heji.innerHTML = all;
+				}
+			}
+
+			function jian_nlan() {
+				//				这是第一商品的减号事件
+				if(lannum >= 1) {
+					shang.setAttribute("value", --lannum);
+					lanco.innerHTML = lans * lannum;
+					var all = lans * lannum + dios * dionum;
+					heji.innerHTML = all;
+				}
+			}
+
+			function jia_adio() {
+				//				这是第二商品的加号事件
+				if(dionum >= 0) {
+					xia.setAttribute("value", ++dionum);
+					dior.innerHTML = dios * dionum;
+					var all = lans * lannum + dios * dionum;
+					heji.innerHTML = all;
+				}
+			}
+
+			function jian_ndio() {
+				//				这是第二商品的加号事件
+				if(dionum >= 1) {
+					xia.setAttribute("value", --dionum);
+					dior.innerHTML = dios * dionum;
+					var all = lans * lannum + dios * dionum;
+					heji.innerHTML = all;
+				}
+			}
+
+			var xia = document.getElementById("xia");
+
+			shang.onblur = function(e) {
+				//				这是第一商品的输入数量事件，这个e是什么意思？
+				var count = parseInt(shang.value);
+				console.log(shang.value);
+				shang.value = count;
+				console.log(count * 598);
+				lanco.innerHTML = count * 598;
+				heji.innerHTML = count * 598;
+				//				每次输入数量都获取每个商品的数量并给heji
+				var xia = document.getElementById("xia");
+				heji.innerHTML = shang.value * 598 + xia.value * 498;
+			}
+
+			xia.onblur = function(e) {
+				//				这是第二商品的输入数量事件，这个e是什么意思？
+				var count = parseInt(xia.value);
+				console.log(xia.value);
+				xia.value = count;
+				console.log(count * 598);
+				dior.innerHTML = count * 498;
+				//				每次输入数量都获取每个商品的数量并给heji
+				var shang = document.getElementById("shang");
+				heji.innerHTML = shang.value * 598 + xia.value * 498;
+			}
+
+			var one = document.getElementsByClassName("one");
+			var body = document.getElementById("body");
+
+			function shan_chu() {
+				//				这是删除商品按钮
+				for(var i = 0; i < sp.length; i++) {
+					if(sp[i].checked == true) {
+						body.removeChild(one[i]);
+					}
+				}
+			}
+		</script>
+	</body>
+
+</html>

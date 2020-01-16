@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>恒星系统</title>
+    <style>
+        html,
+        body {
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+            width: 100%;
+            background-color: black;
+            font-size: 0px;
+            line-height: 0px;
+            color: rgb(115, 115, 209)
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+</body>
+<script>
+
+    //画布
+    let height = document.body.offsetHeight;
+    let width = document.body.offsetWidth;
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    //设置画布宽高
+    canvas.height = height;
+    canvas.width = width;
+    let center = {
+        x: Math.floor(width / 2),
+        y: Math.floor(height / 2)
+    }
+    let stars = [
+        {//行星
+            mass: 81,//质量
+            radius: 5,
+            speed: {//速度
+                x: 0,
+                y: -4
+            },
+            coordinate: {//位置
+                x: center.x + 200, y: center.y
+            }
+        },
+        {//卫星
+            mass: 0.1,//质量
+            radius: 1,
+            speed: {//速度
+                x: -1.5,
+                y: 0.9
+            },
+            coordinate: {//位置
+                x: center.x + 220, y: center.y
+            }
+        },
+        {//恒星
+            mass: 400,//质量
+            radius: 20,
+            speed: {//速度
+                x: 0,
+                y: 0
+            },
+            coordinate: {//位置
+                x: center.x, y: center.y
+            }
+        },
+        {//行星
+            mass: 10,//质量
+            radius: 5,
+            speed: {//速度
+                x: 0,
+                y: 5
+            },
+            coordinate: {//位置
+                x: center.x - 100, y: center.y
+            }
+        },
+        {//小行星
+            mass: 0.001,//质量
+            radius: 2,
+            speed: {//速度
+                x: 0,
+                y: 8.43333
+            },
+            coordinate: {//位置
+                x: center.x - 50, y: center.y
+            }
+        },
+
+    ];
+    for (let i = 0; i < 100; i++) {
+
+        // stars.push(
+        //     {//地球
+        //         mass: Math.random(),
+        //         radius: Math.random() * 5,
+        //         speed: {
+        //             x: 10 - Math.random() * 20,
+        //             y: 10 - Math.random() * 20
+        //         },
+        //         coordinate: {
+        //             x: Math.random() * width, y: Math.random() * height
+        //         }
+        //     },
+        // )
+    }
+    //运行
+
+</script>
+<script src="./gravity.js"></script>
+
+</html>

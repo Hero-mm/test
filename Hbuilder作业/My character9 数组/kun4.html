@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+//			var a=[1,2,3,4,5];
+//			var a=("本次打折的商品有:");
+//			var m=("Nike背包","Adddis运动衫","林宁运动鞋","Kappa外套","361.腰包");
+//			a.push("Adddis运动衫");
+//			a[2]="特步运动鞋";
+//			document.write(a);
+//			var b=a.join("*");
+//			document.write(b);		
+//			console.log(a.join());//返回1，2，3，4，5
+//			console.log(typeof a.join());//返回string
+//			console.log(a.join("*"));//返回   加那个符号隔开的值*
+		document.write("本次打折商品是：<br>");
+		var aa=new Array("Nike背包","Adidas运动衫","李宁运动鞋","Kappa外套","361度腰包");
+		aa.push("Adidas运动裤");
+		aa[2]="特步运动鞋";//为什么报错
+		aa[0]=null;
+		document.write(aa);
+		document.write("<br>");
+		var b=aa.join("*");
+		document.write(b);
+		</script>
+	</body>
+</html>

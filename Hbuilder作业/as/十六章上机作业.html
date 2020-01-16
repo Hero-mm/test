@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		
+		#wrap {
+			width: 300px;
+			height: 200px;
+			border: 1px solid red;
+		}
+		
+		#tab {
+			width: 300px;
+			overflow: hidden;
+		}
+		
+		#tab li {
+			list-style: none;
+			float: left;
+			border: 1px solid blue;
+			box-sizing: border-box;
+			width: 100px;
+			height: 30px;
+			text-align: center;
+			line-height: 30px;
+		}
+		
+		#main>div {
+			width: 300px;
+			height: 170px;
+			text-align: center;
+			line-height: 170px;
+			font-size: 30px;
+			display: none;
+		}
+		#da{
+			width: 1500px;/*这是里面的盒子,长度为图片数量*一张长度*/
+		}
+		
+	</style>
+
+	<body>
+		<div class="row">
+			
+			<div id="carouselcontainer" class="carousel">
+				<ol class="carousel-indicators">
+					<li class="active">1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+				</ol>
+				
+				<div class="carousel-inner">
+					<div class="item active">
+						<a><img src="img/2Q==.jpg"/></a>
+						<div class="carousel-caption">
+							<h3>星游记</h3>
+							<p>星游记是国漫巅峰！</p>
+						</div>
+					</div>
+					<div class="item">
+						<a><img src="img/u=2283069786,3103119387&fm=26&gp=0.jpg"/></a>
+						<div class="carousel-caption">
+							<h3>星游记</h3>
+							<p>星游记使我一生难忘。</p>
+						</div>
+					</div>
+					<div class="item">
+						<a><img src="img/u=2736346935,2269441207&fm=26&gp=0.jpg"/></a>
+						<div class="carousel-caption">
+							<h3>星游记</h3>
+							<p>就算睡觉我有时也会梦到这部动漫。</p>
+						</div>
+					</div>
+					<div class="item">
+						<a><img src="img/u=258604806,903820177&fm=26&gp=0.jpg"/></a>
+						<div class="carousel-caption">
+							<h3>星游记</h3>
+							<p>梦到我化身主角和克拉战斗的情节。 </p>
+						</div>
+					</div>
+					
+					<a class="left carousel-control"><span class="glyphicon glyphicon-chevron-left"></span></a>
+					<a class="left carousel-control"><span class="glyphicon glyphicon-chevron-right"></span></a>
+				</div>
+			</div>
+		</div><br>
+
+		<div class="col-lg-4">
+			<div id="wrap">
+				<ul id="tab">
+					<li id="a">a</li>
+					<li id="b">b</li>
+					<li id="c">c</li>
+				</ul>
+				<div id="main">
+					<div id="aye">a页面</div>
+					<div id="bye">b页面</div>
+					<div id="cye">c页面</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$("#aye").show();
+		$(function() {
+			$("#a").click(function() {
+				$("#aye").show();
+				$("#main div[id!=aye]").hide();
+			});
+			$("#b").click(function() {
+				$("#bye").show();
+				$("#main div[id!=bye]").hide();
+			});
+			$("#c").click(function() {
+				$("#cye").show();
+				$("#main div[id!=cye]").hide();
+			});
+		})
+	</script>
+	<script type="text/javascript">
+		
+	</script>
+
+</html>

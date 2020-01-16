@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//2道
+//			var myArray=["Nike背包","商场商品做出改变后，本次打折的商品有：","Adddis运动衫","林宁运动鞋","Kappa外套","361.腰包"];
+//			console.log(myArray.shift());//返回Nike背包
+//		    console.log(myArray);//返回"Adddis运动衫","林宁运动鞋","Kappa外套","361.腰包"
+//			console.log(myArray.push("Addis运动裤"));//push()向数组的末尾添加一个或多个元素，并返回新的长度
+//			console.log(myArray);//返回Adddis运动衫，林宁运动鞋，Kappa外套，361.腰包，Addis运动裤
+//				document.write(myArray[i]+"<br/>");
+//					for(var i=0;i< myArray.length;i++){
+//				document.write(myArray[i]+"<br/>");
+//			}
+//----------------------------------------------------------------------------
+			//第二道复写
+			 var m="商品做出改变后，本次打折的商品是：";
+        var a=new Array();
+        a[0]="Nike背包";
+        a[1]="Addis运动衫";
+        a[2]="李宁运动鞋";
+        a[3]="Kappa外套";
+        a[4]="361.腰包";
+//      第一步
+//       删除第一个元素，但是返回第一个元素的值
+		 console.log(m);
+		 console.log(a.shift());
+		 console.log(a);
+		 //第二步
+		//在末尾添加一个添加元素
+		console.log(a.push("Addis运动裤"));//返回
+		console.log(typeof a.push());//返回number
+		console.log(a);//返回5) ["Addis运动衫", "李宁运动鞋", "Kappa外套", "361.腰包", "Addis运动鞋"]
+		 for(var i=0;i< a.length;i++){
+				document.write(a[i]+"<br/>");
+				}//页面输出
+	//3道
+//			var myArray="商场商品做出改变后，本次打折的商品有：,Adddis运动衫,林宁运动鞋,Kappa外套,361.腰包,Addis运动裤";
+//			console.log(myArray.replace("林宁运动鞋","特步运动鞋"));
+//--------------------------------------------------------------------------
+//                第3道复写
+//               var m="本次商品做出改变后，本次打折的商品是：";
+//	   		 document.write("本次打折商品是：<br>");
+//			var myArray="Adidas运动衫，\n李宁运动鞋，\nKappa外套，\n361度背包，\nAdiddas运动裤\n";
+//			console.log(m);
+//			console.log(myArray.replace("李宁运动鞋","特步运动鞋"));//替换后的结果
+//	    for(var i=0;i< myArray.length;i++){
+//				document.write(myArray[i]+"\t");
+//			}
+        //4道数字形式
+//      var a=[1,2,3,4,5];
+//      console.log(a.join());//返回1，2，3，4，5
+//		console.log(typeof a.join());//返回string
+//		console.log(a.join("*"));//返回   加那个符号隔开的值*
+        //成功，成就，成绩，成果，成败
+           //------------------------------------------------------------------------
+        //4道复///////////////////////////////////////字符串形式
+       //数组定义
+//     var m="本次打折后的商品是：";
+//     var a=new Array();
+//      a[0]="Addis运动衫";
+//      a[1]="特步运动鞋";
+//      a[2]="Kappa外套";
+//      a[3]="361.腰包";
+//      a[4]="Addis运动裤";
+//      //未变化前。
+//      console.log(m);
+//      console.log(a.join());//返回Addis运动衫,特步运动鞋,Kappa外套,361.腰包,Addis运动裤
+//		console.log(typeof a.join());//返回string
+//		//变化之后，再次输出
+//		console.log(m);
+//		console.log(a.join("'"));//返回   加那个符号隔开的值*/
+//-------------------------结构赋值
+//			var aa=[1,2,3,4,5];
+//			var [a,b,c,d]=aa;
+//			console.log(a);
+		</script>
+	</body>
+</html>

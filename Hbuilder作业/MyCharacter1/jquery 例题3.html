@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<h13>h13</h13>
+		<h2>h2</h2>
+		<h4>h4</h4>
+		<h5>h5</h5>
+		<h6>h6</h6>
+		<ul class="uls">
+			<li id="one">神探夏洛克</li>
+		<li>匆匆那年</li>
+		<li>寻龙觉</li>
+		<li>港囧</li>
+		<li>蚂蚁</li>
+	</ul>
+		<input type="text " autofocus="autofocus "/>
+	</body>
+	<script type="text/javascript"src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript ">
+	$(document).ready(function(){
+	 $("li:first").css("font-weight","bold");
+	 $("li:not(#one)").css("font-size","25px");
+	 $("li:even").css("background-color","#ccc");
+ 	 $("li:odd").css("background-color","#eee");
+ 	$("li:eq(0)").css("border","13px solid blue");
+ 	$("li:gt(3)").css("color","yellow");
+   	$("li:lt(2)").css("color","blue");
+	$(":header").css("display","inline");
+ 	$(":focus").val("搜索一下 ");				
+ })
+	</script>
+</html>

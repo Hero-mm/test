@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>引力作用</title>
+    <style>
+        html,
+        body {
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+            width: 100%;
+            background-color: black;
+            font-size: 0px;
+            line-height: 0px;
+            color: rgb(115, 115, 209)
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+</body>
+<script>
+    //画布
+    let height = document.body.offsetHeight;
+    let width = document.body.offsetWidth;
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    //设置画布宽高
+    canvas.height = height;
+    canvas.width = width;
+    let center = {
+        x: Math.floor(width / 2),
+        y: Math.floor(height / 2)
+    }
+    let stars = [
+        {
+            mass: 10000,
+            radius: 40,
+            speed: {
+                // x: m%2, y: m%3
+                x: 0, y: 0
+            },
+            coordinate: {
+                x: center.x, y: center.y
+            }
+        }
+    ];
+    for (let i = 0; i < 100; i++) {
+        let m = Math.random() * 1 + 1;
+        // let m =Math.random() * 10;
+        stars.push(
+            {//地球
+                mass: m,
+                radius: m ,
+                speed: {
+                    // x: m%2, y: m%3
+                    x: (m % 2 ? 1 : -1) * Math.random() * 10,
+                    y: (m % 3 ? 1 : -1) * Math.random() * 10
+                },
+                coordinate: {
+                    x: Math.random() * width, y: Math.random() * height
+                }
+            },
+        )
+    }
+    //运行
+
+</script>
+<script src="./gravity.js"></script>
+
+</html>

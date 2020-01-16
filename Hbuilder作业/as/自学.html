@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>shi</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/a.css" />
+		<style type="text/css">
+			#txtPassWord {
+				width: 80px;
+			}
+			
+			#txtUserName {
+				width: 80px;
+			}
+			
+			#link:hover {
+				text-decoration: none;
+				color: deepskyblue;
+			}
+			
+			#first {
+				margin-top: 8px;
+			}
+			
+			#drop {
+				line-height: 15px;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="row">
+			<div class="col-lg-3">
+				<div class="navbar navbar-default navbar-fixed-top">
+					<!--这是固定导航栏   在这个位置加上个navbar-fixed-top就行了-->
+					<div class="navbar-header">
+						<!--或者把top改成buttom，就变成了底部的-->
+						<a class="navbar-brand">动漫</a>
+					</div>
+					<ul class="nav navbar-nav">
+						<li class="active">
+							<a>火影忍者</a>
+						</li>
+						<li>
+							<a>星游记</a>
+						</li>
+						<li>
+							<a>魁拔</a>
+						</li>
+						<li>
+							<a>罗小黑战记</a>
+						</li>
+					</ul>
+					<form class="navbar-form navbar-right">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="请输入想搜索的内容" />
+						</div>
+						<button type="button" class="btn btn-primary">搜索</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-2">
+			<div class="row">
+				<div class="col-xs-6">
+					<h2>aaaa<small>bbb</small></h2>
+					<!--表格的嵌套-->
+				</div>
+				<div class="col-xs-6">
+					<h2>aaaa<small><i>bbb</i></small></h2>
+					<!--表格的嵌套-->
+				</div>
+			</div>
+		</div>
+		<!--mark是标记，small是小标题，u标签是下划线，s标签是删除线，b标签加粗，i标签是斜体-->
+		<div class="col-xs-2 text-right">						<!--text-right/text-left   文本左右对齐-->
+			<h2>aaaa<small><strong>bbb</strong></small></h2></div>
+		<!--小标题 加粗，右对齐-->
+		<div class="col-xs-2">
+			<h2>aaaa<small><mark><s>bbb</s></mark></small></h2></div>
+		<!--小标题，标记，删除线-->
+		<div class="col-xs-2 text-capitalize">
+			<h2>aaaa<small><u>bbb</u></small></h2></div>
+		<!--首字母大写，小标题，下划线-->
+		<div class="col-xs-2 col-xs-push-2 text-uppercase">
+			<h2>aaaa<small>bbb</small></h2></div>
+		<!--把字母圈母改为大写-->
+		<!--text-left,center,justify,right，分别是左对齐，居中对齐，两端对齐，右对齐-->
+		<!--text-lowercase,text-uppercase,taxt-capitaliza分别是字母转小写，字母转大写，首字母大写-->
+		</div>
+		<div class="row">
+			<!--第二行-->
+			<div class="col-xs-3">
+				<h2>你好，<small title="你好，我喜欢火影"><mark>我的爱好是</mark></small></h2>
+				
+				<footer>
+					<h3>吴忠臣</h3>
+				</footer>
+				<!--这是三个标签，文章结尾处常用-->
+				<cite><h4>18-2班</h4></cite>
+				
+				<span class="lead">
+					aaaaaaaaaaa<!--段落-->
+				</span>
+			</div>
+			
+			<div class="col-xs-3">
+				<ul class="list-unstyled">     <!--list-unstyled是去掉列表前的点-->
+					<li>
+						<h4>星游记</h4></li>
+					<li>
+						<h4>海贼王</h4></li>
+					<li>
+						<h4>火影</h4></li>
+					<li>
+						<h4>魁拔</h4></li>
+				</ul>
+			</div>
+			<div class="col-xs-3">
+				<ul class="list-inline"><!--如果不指定   就会竖着放-->
+					<li>
+						<h4>迪亚</h4></li>
+					<!--list-inline是把列表横着放-->
+					<li>
+						<h4>麦当</h4></li>
+					<li>
+						<h4>咕咚</h4></li>
+					<li>
+						<h4>麦龙</h4></li>
+				</ul>
+				<dl class="dl-horizontal">
+					<dt>我最喜欢的动漫</dt>
+					<dd>火影</dd>
+					<dd>魁拔</dd>
+					<dd>星游记</dd>
+					<dd>罗小黑战记</dd>
+				</dl>
+			</div>
+			<div class="col-xs-2">
+				
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-3">
+				<table class="table">
+					<!--普通表格-->
+					<thead>
+						<tr>
+							<th>标题一</th>
+							<th>标题二</th>
+							<th>标题三</th>
+						</tr>
+					</thead>
+					<tr>
+						<td>内容一</td>
+						<td>内容二</td>
+						<td>内容三</td>
+					</tr>
+					<tr>
+						<td>内容四</td>
+						<td>内容五</td>
+						<td>内容六</td>
+					</tr>
+				</table>
+			</div>
+			<div class="col-xs-2">
+				<table class="table table-condensed">
+					<!--紧凑型表格-->
+					<thead>
+						<tr>
+							<th>标题一</th>
+							<th>标题二</th>
+							<th>标题三</th>
+						</tr>
+					</thead>
+					<tr>
+						<td>内容一</td>
+						<td>内容二</td>
+						<td>内容三</td>
+					</tr>
+					<tr>
+						<td>内容四</td>
+						<td>内容五</td>
+						<td>内容六</td>
+					</tr>
+				</table>
+			</div>
+			<div class="col-xs-2">
+				<table class="table table-bordered">
+					<!--边框表格-->
+					<thead>
+						<tr>
+							<th>标题一</th>
+							<th>标题二</th>
+							<th>标题三</th>
+						</tr>
+					</thead>
+					<tr>
+						<td>内容一</td>
+						<td>内容二</td>
+						<td>内容三</td>
+					</tr>
+					<tr>
+						<td>内容四</td>
+						<td>内容五</td>
+						<td>内容六</td>
+					</tr>
+				</table>
+			</div>
+			<div class="col-xs-2">
+				<table class="table table-striped">
+					<!--斑马线表哥-->
+					<thead>
+						<tr>
+							<th>标题一</th>
+							<th>标题二</th>
+							<th>标题三</th>
+						</tr>
+					</thead>
+					<tr>
+						<td>内容一</td>
+						<td>内容二</td>
+						<td>内容三</td>
+					</tr>
+					<tr>
+						<td>内容四</td>
+						<td>内容五</td>
+						<td>内容六</td>
+					</tr>
+				</table>
+			</div>
+			<div class="col-xs-3">
+				<table class="table table-responsive">
+					<!--响应式表格-->
+					<thead>
+						<tr>
+							<th>标题一</th>
+							<th>标题二</th>
+							<th>标题三</th>
+						</tr>
+					</thead>
+					<tr>
+						<td>内容一</td>
+						<td>内容二</td>
+						<td>内容三</td>
+					</tr>
+					<tr>
+						<td>内容四</td>
+						<td>内容五</td>
+						<td>内容六</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-3">
+				<table class="table table-hover">
+					<!--高亮行-->
+					<thead>
+						<tr>
+							<th>标题一</th>
+							<th>标题二</th>
+							<th>标题三</th>
+						</tr>
+					</thead>
+					<tr>
+						<td>内容一</td>
+						<td>内容二</td>
+						<td>内容三</td>
+					</tr>
+					<tr>
+						<td>内容四</td>
+						<td>内容五</td>
+						<td>内容六</td>
+					</tr>
+				</table>
+			</div>
+			<div class="col-xs-3">
+				<div class="form-inline">
+					<!--form-inline可以把表单组件东西横着放，默认是竖着放-->
+					<div class="form-group">
+						<!--form-group 在写每一个大元素是要用-->
+						<label for="txtUerName">用户名</label>
+						<!--这个for有什么用啊，应该没什么用吧-->
+						<input type="text" class="form-control" id="txtUserName" placeholder="请输入用户名"/>
+					</div>
+					<div class="form-group">
+						<label for="txtpassWord">密&nbsp;&nbsp;&nbsp;码</label>
+						<input type="password" class="form-control" id="txtPassWord" placeholder="请输入密码" />
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-3">
+				<div class="form-group">
+					<label class="control-label col-lg-1">select</label>
+					<div class="col-lg-3  col-lg-push-2">
+						<select class="form-control">  <!-- 在这里加上multiple="multiple"，会显示所有的选项-->
+							<!--multiple可以一下子显示所有选项-->
+							<option>螺旋丸</option>
+							<option>影分身</option>
+							<option>色诱术</option>
+							<option>螺旋丸</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-3">
+
+			</div>
+			<div class="col-lg-3">
+				<div class="form-horizontal">
+					<div class="form-group">
+						<label class="control-label col-lg-1">textarea</label>
+						<div class="col-lg-3">
+							<textarea class="form-control" rows="1"></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="radio">
+					<label>
+						<input type="radio"/>男&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio"/>女
+					</label>
+				</div>
+				<div class="checkbox">
+					<label><!--注意这里的复选框要在label标签里-->
+					<input type="checkbox" value=""/>火影
+				</label>
+					<label>
+					<input type="checkbox" value="" />星游记
+				</label>
+				</div>
+
+			</div>
+			<div class="col-lg-3">
+
+			</div>
+			<div class="col-lg-3">
+
+			</div>
+			<div class="col-lg-3">
+				<label class="checkbox-inline"><!--check-inline可以使下面的元素横着放-->
+				<input type="checkbox"/>不知
+			</label>
+				<label class="checkbox-inline">
+				<input type="radio"/>不问
+			</label>
+				<label class="checkbox-inline">
+				<input type="checkbox"/>不遇
+			</label>
+			</div>
+			<div class="col-lg-3">
+			
+			</div>
+			<div class="col-lg-3">
+				
+			</div>
+			<div class="col-lg-3">
+				<!--为什么这里不显示图标啊，还有这个aria-hidden="true";是什么鬼？-->
+				<div class="form-horizontal">
+					<div class="form-group has-warning has-feedback">
+						<div class="col-lg-4">
+							<label class="control-label col-lg-1">has-warming</label>
+						</div>
+						<div class="col-lg-8">
+							<input type="text" class="form-control" placeholder="has-warming" value="" />
+							<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+							<!--form-control-feedback可以让小图标在表单组件里出现，并且外面的大div里还要加上has-feedback-->
+							<!--小图标需要fonts文件的支持-->
+						</div>
+					</div>
+					
+					<div class="form-group has-error has-feedback">
+						<div class="col-lg-4">
+							<label class="control-label col-lg-1">has-error</label>
+						</div>
+						<div class="col-lg-8">
+							<input type="text" class="form-control" placeholder="has-error" value="" />
+							<span class="glyphicon glyphicon-apple form-control-feedback"></span>
+						</div>
+					</div>
+					
+					<div class="form-group has-success has-feedback">
+						<div class="col-lg-4">
+							<label class="control-label col-lg-1">has-success</label>
+						</div>
+						<div class="col-lg-8">
+							<input type="text" class="form-control" placeholder="has-warming" value="" />
+							<span class="glyphicon glyphicon-bookmark form-control-feedback"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-3">
+				<div class="btn-group">
+					<button class="btn btn-default" type="button">我的淘宝</button>
+					<button class="btn btn-default" type="button">购物车</button>
+					<div class="btn-group"><!--btn-group  用于按钮的下拉菜单-->
+						<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">
+						收藏夹<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu" id="drop">
+							<li>&nbsp;收藏的宝贝</li><br>
+							<li>&nbsp;收藏的店铺</li>
+						</ul>
+					</div>
+					<button class="btn btn-default" type="button">商品分类</button>
+					<button class="btn btn-default" type="button">卖家中心</button>
+				</div><br>
+
+				<div class="btn-group btn-group-justified">
+					<!--这是等分按钮组，按钮会平分占满屏幕-->
+					<a type="button" class="btn btn-success">火影</a>
+					<a type="button" class="btn btn-success">星游记</a>
+					<a type="button" class="btn btn-success">罗小黑战记</a>
+					<a type="button" class="btn btn-success">魁拔</a>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="col-lg-6">
+					<div class="btn-group-vertical">
+						<!--这是垂直分组代码-->
+						<button class="btn btn-default" type="button">我的淘宝</button>
+						<button class="btn btn-default" type="button">购物车</button>
+						<div class="btn-group">
+							<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">
+								<!--class="btn btn-default dropdown-toggle" data-toggle="dropdown很重要"-->
+						收藏夹<span class="caret"></span>
+						</button>
+							<ul class="dropdown-menu" id="drop">
+								<li>&nbsp;收藏的宝贝</li><br>
+								<li>&nbsp;收藏的店铺</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-lg-3">
+					<div class="btn-group dropup">
+						<!--在这里加上个dropup就可以实现向上弹出-->
+						<div class="btn-group">
+							<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">
+							收藏夹<span class="caret"></span>
+						</button>
+							<ul class="dropdown-menu">
+								<li>收藏的宝贝</li>
+								<li>收藏的店铺</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<div class="col-lg-3">
+				<ul class="nav nav-tabs">
+					<li>
+						<a href="#">音乐</a>
+					</li>
+					<li>
+						<a href="#">电影</a>
+					</li>
+					<li>
+						<a href="#">图片</a>
+					</li>
+					<li>
+						<a href="#">游戏</a>
+					</li>
+					<li>
+						<a href="#">学习</a>
+					</li>
+				</ul>
+				<ul class="nav nav-pills"><!--一个自带下划线   一个不带   除了这个效果都一样-->
+					<li>
+						<a href="#">音乐</a>
+					</li>
+					<li>
+						<a href="#">电影</a>
+					</li>
+					<li>
+						<a href="#">图片</a>
+					</li>
+					<li>
+						<a href="#">游戏</a>
+					</li>
+					<li>
+						<a href="#">学习</a>
+					</li>
+				</ul>
+				
+			</div>
+			<div class="col-lg-3">
+				<ul class="nav nav-pills nav-stacked"><!--nav-stacked可以让横着的导航栏元素竖着放虽然不指定任何也会竖着放-->
+					<li class="active">
+						<a href="#">火影</a>
+					</li>
+					<li class="disabled">
+						<a href="#">星游记</a>
+					</li>
+					<li>
+						<a href="#">罗小黑战记</a>
+					</li>
+					<li>
+						<a href="#">魁拔</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-lg-3">
+				<ol class="nav nav-pills nav-justified"><!--这个nav-justified也是会让元素沾满屏幕-->
+					<li class="active">
+						<a href="#">火影</a>
+					</li>
+					<li>
+						<a href="#">星游记</a>
+					</li>
+					<li>
+						<a href="#">罗小黑战记</a>
+					</li>
+					<li>
+						<a href="#">魁拔</a>
+					</li>
+				</ol>
+			</div>
+			<div class="col-lg-3">
+				<ol class="breadcrumb">
+					<li class="active">
+						<span class="glyphicon glyphicon-home"></span>
+						<a href="#">火影</a>
+					</li>
+					<li>
+						<a href="#">星游记</a>
+					</li>
+					<li>
+						<a href="#">罗小黑战记</a>
+					</li>
+					<li>
+						<a href="#">魁拔</a>
+					</li>
+				</ol>
+			</div>
+			<div class="col-lg-3">
+				
+			</div><br>
+			<div class="col-lg-3">
+				<div class="navbar navbar-default">
+					<div class="navbar-header">
+						<!--导航标题的话，要先加上在外面套个盒子class=navbar-header；再在里面的a里加上navbar-brand-->
+						<a href="#" class="navbar-brand"><span class="glyphicon glyphicon-baby-formula"></span></a>
+					</div>
+					<!--a标签 class里缺少个brand-img-->
+
+					<ul class="nav navbar-nav">
+						<li class="active">
+							<a href="#">火影</a>
+						</li>
+						<li>
+							<a href="#">星游记</a>
+						</li>
+						<li>
+							<a href="#">罗小黑战记</a>
+						</li>
+						<li>
+							<a href="#">魁拔</a>
+						</li>
+					</ul>
+				</div>
+			</div><br>
+			<div class="row">
+				<div class="col-lg-3">
+					<div class="navbar navbar-default">
+						<div class="navbar-header">
+							<a class="navbar-brand">动漫</a>
+						</div>
+						<form class="navbar-form navbar-right">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="请输入想搜索的内容" />
+							</div>
+							<button type="button" class="btn btn-primary">搜索</button>&nbsp;
+						</form>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="navbar navbar-default">
+						<div class="navbar-header">
+							<a class="navbar-brand">动漫</a>
+						</div>
+						<ul class="nav navbar-nav">
+							<li class="active">
+								<a>火影忍者</a>
+							</li>
+							<li>
+								<a>星游记</a>
+							</li>
+							<li>
+								<a>魁拔</a>
+							</li>
+							<li>
+								<a>罗小黑战记</a>
+							</li>
+						</ul>
+						<form class="navbar-form navbar-right">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="请输入想搜索的内容" />
+							</div>
+							<button type="button" class="btn btn-primary">搜索</button>&nbsp;
+						</form>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<div class="navbar navbar-default">
+						<div class="navbar-header">
+							<a class="navbar-brand  navbar-inverse">动漫</a>
+							<!--navbar-inverse这是反色导航栏-->
+						</div>
+						<p class="navbar-text">导航栏里的文本&nbsp;
+							<a class="navbar-link" id="link">链接</a><!--导航栏里的链接-->
+						</p>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<ul class="pagination">
+						<li>
+							<a>首页</a>
+						</li>
+						<li>
+							<a>上一页</a>
+						</li>
+						<li>
+							<a>1</a>
+						</li>
+						<li>
+							<a>2</a>
+						</li>
+						<li>
+							<a>3</a>
+						</li>
+						<li>
+							<a>......</a>
+						</li>
+						<li>
+							<a>下一页</a>
+						</li>
+						<li>
+							<a>尾页</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-lg-3">
+					<ul class="pager">
+						<li>
+							<a>上一页</a>
+						</li>
+						<li>
+							<a>下一页</a>
+						</li>
+						<li class="previous">
+							<a>上一页</a>
+						</li>
+						<li class="next">
+							<a>下一页</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-lg-3">
+					<div class="navbar navbar-default">
+						<ul class="nav navbar-nav">
+							<li>
+								<a>音乐<span class="label label-primary">5</span></a>
+							</li>
+							<li>
+								<a>电影<span class="label label-info">5</span></a>
+							</li>
+							<li>
+								<a>动漫<span class="label label-success">5</span></a>
+							</li>
+							<li>
+								<a>游戏<span class="label label-warning">5</span></a>
+							</li>
+							<li>
+								<a>聊天<span class="label label-default">5</span></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-3">
+					<div class="panel panel-success">
+						<!--在最外面的panel标签里加上颜色-->
+						<div class="panel panel-heading">panel-heading面板</div>
+						<div class="panel-body">
+							这部动漫超好看的！
+						</div>
+						<div class="panel panel-footer">panel-footer</div>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<div class="panel panel-default">
+						<div class="panel panel-heading">动漫角色</div>
+						<div class="panel-body">
+							这是我喜欢的动漫里的角色
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th>火影</th>
+										<th>罗小黑战记</th>
+										<th>星游记</th>
+										<th>魁拔</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>鸣人</td>
+										<td>小黑</td>
+										<td>麦当</td>
+										<td>蛮吉</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="panel-footer">
+							我最爱的动漫！
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<div class="panel panel-default">
+						<div class="panel panel-heading">动漫角色</div>
+						<div class="panel-body">
+							火影里的牛逼人物
+							<div class="list-group">
+								<div class="list-group-item list-group-item-success">初代火影：忍者之神</div>
+								<div class="list-group-item list-group-item-warning">迈特凯：开八门的男人</div>
+								<div class="list-group-item list-group-item-info">斑爷:忍界枭雄</div>
+								<div class="list-group-item">四代火影：黄色闪光</div>
+							</div>
+						</div>
+						<div class="panel-footer">
+							我最爱的动漫！
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<a class="thumbnail"><img src="img/2Q==.jpg" width="400px" height="400px"></a>
+					<div class="caption">
+						<h3>星游记插图</h3><br>
+						<p>国漫超强之星游记！</p>
+						<p>
+							<button class="btn btn-sm btn-info">观看</button>
+							<button class="btn btn-sm btn-info">评论</button>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-3">
+					<div class="jumbotron">
+						<!--巨幕系统-->
+						<div class="container text-center">
+							<h1>火影忍者</h1>
+							<p>火影忍者是一部神作！</p>
+							<p>
+								<button type="button" class="btn">立即观看</button>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<div class="page-header">
+						<h1 class="text-center">星游记<br><small>打完可不许记仇啊！——<small><i>麦当</i></small></small></h1>
+					</div>
+					<div class="alert alert-info ">信息提示框</div>
+					<div class="alert alert-success alert-dismissible"><button class="close" data-dismiss="alert">times</button>成功提示框</div>
+				</div>
+				<div class="col-lg-3">
+					<div class="alert alert-info ">信息提示框&nbsp;
+						<a class="alert-link">链接</a>
+					</div>
+					<div class="progress">
+						<div class="progress-bar active" style="width: 30%">30%</div>
+						<span class="sr-only">已完成20%</span>
+						<!--sr-only用于隐藏这里面的字-->
+						<div class="progress-bar progress-bar-info progress-bar-striped" style="width: 20%">20%</div>
+						<div class="progress-bar progress-bar-striped" style="width: 25%">25%</div>
+						<div class="progress-bar progress-bar-success progress-bar-striped active" style="width: 25%">25%</div>
+						<!--active在striped的基础上加上动态效果，striped是加上条纹-->
+					</div>
+					<div class="media">
+						<a class="pull-left"><img class="media-object img-rounded" src="img/u=258604806,903820177&fm=26&gp=0.jpg" / width="180px" height="143px"></a>
+						<div class="media-body">
+							<h4 class="media-heading">星游记 <label class="label label-danger">热评</label> <label class="label label-danger">国漫</label></h4>
+							<label>9000万+ 人点评&nbsp;&nbsp;&nbsp;26集</label>
+							<div>这是一场惊心动魄的冒险之旅！来跟着麦当一起，去追寻父亲的足迹吧！</div><br>
+							<div class="">
+								<button type="button" class="btn">1</button>
+								<button type="button" class="btn">2</button>
+								<button type="button" class="btn">3</button>
+								<button type="button" class="btn">......</button>
+								<button type="button" class="btn">25</button>
+								<button type="button" class="btn">26</button>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<div class="media">
+						<a class=""><img class="media-object img-rounded" src="img/u=2283069786,3103119387&fm=26&gp=0.jpg" / width="200px" height="143px"></a><br>
+						<div class="media-body">
+							<h4 class="media-heading">星游记 <label class="label label-danger">热评</label> <label class="label label-danger">国漫</label></h4>
+							<label>9000万+ 人点评&nbsp;&nbsp;&nbsp;26集</label>
+							<div>这是一场惊心动魄的冒险之旅！来跟着麦当一起，<br>去追寻父亲的足迹吧！</div><br>
+							<div class="">
+								<button type="button" class="btn">1</button>
+								<button type="button" class="btn">2</button>
+								<button type="button" class="btn">3</button>
+								<button type="button" class="btn">......</button>
+								<button type="button" class="btn">24</button>
+								<button type="button" class="btn">25</button>
+								<button type="button" class="btn">26</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-3">
+					<ul class="list-group">
+						<li class="list-group-item">
+							<a>漩涡鸣人</a>
+						</li>
+						<li class="list-group-item list-group-item-danger">
+							<a>宇智波佐助</a><span class="label label-danger">54</span></li>
+						<li class="list-group-item list-group-item-success">
+							<a>漩涡长门</a><span class="badge">15</span></li>
+						<li class="list-group-item list-group-item-info">
+							<h4 class="list-group-item-heading">六道长门</h4>
+							<p class="list-group-item-text">继承了轮回眼的男人！</p>
+						</li>
+						<li class="list-group-item active">
+							<h4 class="list-group-item-heading">宇智波斑</h4>
+							<p class="list-group-item-text">他是忍者时代的一个枭雄！</p>
+						</li>
+					</ul>
+				</div>
+				<div class="col-lg-3">
+					<div class="media-body">
+						<h4 class="media-heading">星游记 <label class="label label-danger">热评</label> <label class="label label-danger">国漫</label></h4>
+						<label>9000万+ 人点评&nbsp;&nbsp;&nbsp;26集</label>
+						<div>这是一场惊心动魄的冒险之旅！来跟着麦当一起，<br>去追寻父亲的足迹吧！</div><br>
+					</div>
+					<div class="media-left media-middle">
+						<!--照片的右对齐-->
+						<a><img class="media-object img-rounded" src="img/u=2736346935,2269441207&fm=26&gp=0.jpg" width="200px" height="143px" /></a>
+					</div><br>
+				</div>
+			</div>
+
+			<!--这之前的都不需要js  后面的就需要js插件了-->
+			<!--必须要搞懂每个引用的代码是什么意思-->
+			<div class="row">
+				<div class="col-lg-3">
+					<div class="navbar-header">
+						<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-responsive-collepse">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<!--这三个好像没什么用   删除了也没什影响-->
+						</button>
+						<a href="" class="navbar-brand">导航条</a>
+					</div>
+					<div class="collapse navbar-collapse navbar-responsive-collapse">
+						<ul class="nav navbar-nav">
+							<li>
+								<a>首页</a>
+							</li>
+							<li>
+								<a>音乐</a>
+							</li>
+							<li>
+								<a>小说</a>
+							</li>
+							<li>
+								<a>视频</a>
+							</li>
+							<li>
+								<a>动漫</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<button class="btn btn-primary"  type="button">点击我</button>
+					<div class="modal fade" id="mymodal">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal">
+										<span sria-hidden="true">&times;</span>
+										<span class="sr-only">close</span>
+									</button>
+									<h4 class="modal-title">弹出效果展示</h4>
+								</div>
+								<div class="modal-body">
+									<p>在弹出框显示的时候有一个过渡过程</p>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn-default" data-dismiss="modal">关闭</button>
+									<button class="btn-primary" type="button">保存</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3">
+
+				</div>
+				<div class="col-lg-3">
+
+				</div>
+			</div>
+	</body>
+	<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+	<!--这里要加上jq插件   等代码加载完了就可以显示下拉菜单了-->
+	<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+
+</html>

@@ -1,0 +1,164 @@
+* {
+	/*上下外边距0px，左右外边距自动*/
+	margin: 0px 0px;
+	font-size: 16px;
+	font-family: "宋体";
+	/*
+				border: 1px green dashed;
+				/**/
+}
+
+h1 {
+	font-size: 30px;
+}
+
+a {
+	text-decoration: none;
+}
+
+html {
+	min-width: 1500px;
+}
+
+body {
+	max-width: 780px;
+	margin: 0px auto;
+}
+
+.qian {
+	color: red;
+	font-family: "黑体";
+}
+
+.xuanzhe {
+	/*多选框*/
+	width: 15px;
+	height: 15px;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+tr {
+	border-bottom: 1px darkgray solid;
+}
+
+/*<!-- 表格thead CSS -->*/
+#table_one thead tr td {
+	height: 40px;
+	font-weight: bold;
+}
+
+/*<!-- 表格tbody CSS -->*/
+/*选择列*/
+
+.td_xuanze {
+	/*选择列*/
+	min-width: 50px;
+}
+
+
+/*商品列*/
+
+.td_shangpin {
+	/*商品列*/
+	min-width: 300px;
+	height: 100px;
+}
+
+.td_shangpin img {
+	/*商品图片*/
+	width: 70px;
+	height: 70px;
+	margin: 15px 0px;
+	float: left;
+}
+
+.td_shangpin span {
+	/*商品文字*/
+	min-width: 200px;
+	height: 70px;
+	margin: 15px 0px;
+	float: right;
+}
+
+.td_shangpin span p {
+	/*商品说明*/
+	font-size: 12px;
+	margin: 10px 0px;
+}
+
+
+/*单价列*/
+
+.td_danjia {
+	/*单价列*/
+	min-width: 100px;
+}
+
+
+/*数量列*/
+
+.td_shuliang {
+	/*数量列*/
+	min-width: 150px;
+}
+
+.td_shuliang button {
+	/*加减按钮*/
+	float: left;
+	width: 25px;
+	height: 25px;
+	font-size: 20px;
+	border: 1px gray solid;
+	background-color: white;
+}
+
+.td_shuliang input {
+	/*输入框*/
+	float: left;
+	width: 40px;
+	height: 21px;
+	font-size: 16px;
+	border: 1px gray solid;
+	text-align: center;
+}
+
+
+/*总价列*/
+
+.td_zongjia {
+	/*总价列*/
+	min-width: 150px;
+	font-weight: bold;
+}
+
+#table_one tfoot tr td {
+	height: 40px;
+	line-height: 30px;
+}
+
+.bt_jiesuan {
+	width: 150px;
+	height: 30px;
+	float: right;
+	margin-right: 20px;
+	color: white;
+	background-color: orangered;
+	border-color: red;
+}
+
+#settlement {
+	background: #E00000;
+	border: none;
+	color: #FFFFFF;
+	float: right;
+	font-size: 16px;
+	height: 40px;
+	line-height: 40px;
+	margin: 0px;
+	outline: none;
+	padding: 0px;
+	width: 160px;
+}

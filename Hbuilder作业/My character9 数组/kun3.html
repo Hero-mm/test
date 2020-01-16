@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title> 
+	</head>
+	<body>
+		<script>
+//			var a="商场商品做出改变后，本次打折的商品有：,Adddis运动衫,林宁运动鞋,Kappa外套,361.腰包,Addis运动裤";
+//			console.log(a.replace("林宁运动鞋","特步运动鞋"));
+		    document.write("本次打折商品是：<br>");
+			var a=new Array("Nike背包","Adidas运动衫","李宁运动鞋","Kappa外套","361度背包");
+			a.push("Adidas运动裤");//将在末尾加上Adidas运动裤
+			a[2]="特步运动鞋";//将李宁运动鞋换成特步运动鞋
+			a[0]=null;//将第一个数值设置为空值
+			document.write(a);
+				</script>
+	</body>
+</html>

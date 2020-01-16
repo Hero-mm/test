@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var num=0;
+			//定义两个参数，首先定义第一个
+			function add(){
+			while(num<5){
+				num++;		
+			}
+			}
+			//定义第二个参数
+			function showNum(){
+			add();		
+		alert(num);
+			}
+			showNum();
+//			"闭包":函数里面在创建一个函数
+//			function test(){
+//				var a=10;
+//				function nb(){
+//					alert(a);
+//				}
+//				return nb;
+//		}
+//			var ss=wb();
+//			ss();
+//______________________________________________
+//		function f1 () {
+//			var  n=999;
+//			af=function(){
+//				n+=1;
+//			}
+//			function f2 () {
+//			alert(n);
+//			}
+//			return f2;
+//		}
+//			var ss=f1();
+//			ss();输出结果为99
+//           af();
+//			ss();输出结果为1000，再次调用，n+1，结果为1000
+		</script>
+	</body>
+</html>

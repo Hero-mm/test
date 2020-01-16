@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>ss</title>
+	</head>
+	<body>
+		<h2 id="mm">热门电影</h2>
+		<ul class="ul">
+			<li>火影忍者</li>
+			<li>星游记</li>
+			<li>魁拔</li>
+			<li>罗小黑战记</li>
+		</ul>
+		<h2 id="nn">热门电影</h2>
+		<ul class="ull">
+			<li>火影忍者</li>
+			<li>星游记</li>
+			<li>魁拔</li>
+			<li>罗小黑战记</li>
+		</ul>
+		<div id="ulo">
+			<li>奇拉比</li>
+		</div>
+		<a id="ulo">
+			<li>雷影</li>
+		</a>
+		<ul id="ulo">
+			<li>宇智波鼬</li>
+		</ul>
+		<div id="ulo">
+			<li>宇智波斑</li>
+		</div>
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#mm").css("background-color","red");
+//				热门电影背景改成红色
+				$(".ul").css("background-color","blue");
+//				列表背景蓝色,列表内元素字体25px,全部color为pink;#mm和.ul样式见下三行
+//				$("li").css("font-size","25px");$("*").css("color","pink");暂时封印
+				$("#mm,.ul").css("border","13px solid black");
+				
+				
+				
+				$(".ull li").css("background-color","#1B6D85");
+				$(".ull>li").css("font-size","20px");
+				
+				$(".ull+ul").css("background-color","#1B6D85");
+//				+后面如果写了固定的标签名或没写,就只会找下一个同等级的标签名,不顾标签名是什么,应该是这样
+				
+				$("#ulo~div").css("color","red");//第一个div盒子的下一个#ulo的div盒子
+				$("#ulo~").css("font-family","楷体");
+				console.log($("li:first").innerHTML);
+//				这里输出的为什么是undifined
+//				索引值相当于一个数组
+				$("li:lt(3)").css("color","white");
+//				这个3也是相当于数组的3
+				$("div[class]").css("font-family","仿宋");
+				console.log($(".ull li:first-child"));
+			})
+		</script>
+	</body>
+</html>

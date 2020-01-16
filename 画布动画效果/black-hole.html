@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>黑洞</title>
+    <style>
+        html,
+        body {
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+            width: 100%;
+            background-color: black;
+            font-size: 0px;
+            line-height: 0px;
+            color: rgb(54, 54, 58)
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+</body>
+<script>
+    let height = document.body.offsetHeight;
+    let width = document.body.offsetWidth;
+    let center = {
+        x: Math.floor(width / 2),
+        y: Math.floor(height / 2)
+    }
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+
+    //设置画布宽高
+    canvas.height = height;
+    canvas.width = width;
+    //随机生成星星初始坐标
+    let starList = [];
+    for (let i = 0; i < 1000; i++) {
+        starList[i] = {
+            // color: "#" + Math.floor(Math.random() * 16777215).toString(16),
+            color: "rgb(177, 183, 243)",
+            radius: 10+Math.floor(Math.random() * (Math.max(height, width))),//半径
+            // x:Math.floor(Math.random() * width),
+            // x:Math.floor(Math.random() * height),
+            radian: Math.random() * 2 * Math.PI,//弧度
+            width: 0,
+            speed: 0,
+        };
+        starList[i].speed = Math.PI / 180 / (starList[i].radius / 100);
+        starList[i].width = 2;
+    }
+    display();
+
+    window.onclick = start;
+
+    let time;
+    function start() {
+        time = setInterval(() => {
+            rotate();
+            display();
+
+        }, 1000 / 60);
+        window.onclick = stop;
+    }
+    function stop() {
+        clearInterval(time);
+        window.onclick = start;
+
+    }
+    //旋转
+    function rotate() {
+        for (let i = 0; i < starList.length; i++) {
+            let radian = starList[i].radian;
+            radian += starList[i].speed;
+            if (radian > (Math.PI * 2)) {
+                starList[i].radian = 0;
+            } else {
+                starList[i].radian = radian;
+            }
+            starList[i].radius -= 0.1;
+            starList[i].radius-=starList[i].width/2;
+            if (starList[i].radius <= 10) {
+                starList[i].speed = 0;
+                starList[i].radius = 0;
+            }
+        }
+    }
+    //渲染
+    function display() {
+        ctx.fillStyle = "black";
+        ctx.fillRect(0, 0, 10000, 10000);
+
+        ctx.fillStyle = "rgb(54, 54, 58)";
+        ctx.beginPath();
+        ctx.arc(center.x, center.y, 10, 0, 2 * Math.PI);
+        ctx.fill();
+
+        for (let i = 0; i < starList.length; i++) {
+            if(starList[i].speed==0){
+                continue;
+            }
+            starList[i].speed = Math.PI / 180 / (starList[i].radius / 100);
+            ctx.strokeStyle = starList[i].color;
+            ctx.lineWidth = starList[i].width;
+            ctx.beginPath();
+            ctx.arc(center.x, center.y, starList[i].radius, starList[i].radian, starList[i].radian + starList[i].speed);
+            ctx.stroke();
+        }
+    }
+</script>
+
+</html>
